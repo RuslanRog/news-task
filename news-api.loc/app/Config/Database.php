@@ -27,15 +27,15 @@ class Database extends Config
     public array $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => 'root',
-        'password' => 'root',
-        'database' => 'news_api_task',
+        'username' => '',
+        'password' => '',
+        'database' => '',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => true,
         'charset'  => 'utf8',
-        'DBCollat' => 'utf8mb4_unicode_ci',
+        'DBCollat' => 'utf8_general_ci',
         'swapPre'  => '',
         'encrypt'  => false,
         'compress' => false,
@@ -44,6 +44,7 @@ class Database extends Config
         'port'     => 3306,
     ];
 
+//'DBCollat' => 'utf8mb4_unicode_ci',
     /**
      * This database connection is used when
      * running PHPUnit database tests.

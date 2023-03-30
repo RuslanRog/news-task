@@ -31,6 +31,23 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+// Showing some count of news from category.
+// http://news-api.loc/api/v1/language/en/news/count/5/category/footbol/
+$routes->get('api/v1/language/(:any)/news/count/(:num)/category/(:any)/', 'NewsController::getCount/$1/$2/$3');
+
+
+// Searching news by title-name from category
+// http://news-api.loc/api/v1/language/en/news/title/post-title-name/category/footbol/
+$routes->get('api/v1/language/(:any)/news/title/(:any)/category/(:any)/', 'NewsController::getByTitle/$1/$2/$3');
+
+
+
+// Showing all news from all categories (it is my idea).
+// http://news-api.loc/api/v1/language/en/news/all
+$routes->get('api/v1/language/(:any)/news/all/', 'NewsController::index');
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
