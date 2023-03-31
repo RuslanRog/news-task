@@ -2,110 +2,49 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\RESTful\ResourceController;
+use App\Models\CategoryModel;
+use App\Models\NewsModel;
 
-class NewsController extends ResourceController
+class NewsController extends BaseController
 {
-
-    /**
-     * // Return the properties of a resource object
-     * Showing some count of news from category.
-     *
-     * @return mixed
-     */
-    public function getCount($a = null, $b = null, $c = null)
+    // Showing some count of news from by category key.
+    // http://news-api.loc/api/v1/language/en/news/count/2/category/Football/
+    // http://news-api.loc/api/v1/language/ua/news/count/2/category/Футбол
+    public function getCount($language, $count, $categoryName)
     {
-        var_dump($a);
-        var_dump($b);
-        var_dump($c);
+        // Get category id from name
+        $category = CategoryModel::where('category_name_' . $language, $categoryName)->first();
+        if (!$category) {
+            return response()->json(['error' => 'Category not found'], 404);
+        }
+
+        // Get data from News
+        $news = NewsModel::select('title_' . $language, 'description_' . $language)
+            ->where('category_id', $category->id)
+            ->orderBy('created_at', 'desc')
+            ->take($count)
+            ->get();
+
+        $newsArr = @json_decode(json_encode($news), true);
+
+        return json_encode($newsArr, JSON_UNESCAPED_UNICODE);
     }
 
-
-    /**
-     * // Return the properties of a resource object
-     * Showing some count of news from category.
-     *
-     * @return mixed
-     */
-    public function getByTitle($a = null, $b = null, $c = null)
+// Searching news by title-name from category
+// http://news-api.loc/api/v1/language/en/news/title/Bethem news today
+// http://news-api.loc/api/v1/language/ua/news/title/Новини про Бетхема
+    public function getByTitle($language, $title)
     {
-        var_dump($a);
-        var_dump($b);
-        var_dump($c);
+        // Search by title is News table
+        $news = NewsModel::select('title_' . $language, 'description_' . $language)
+            ->where('title_' . $language, $title)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        $newsArr = @json_decode(json_encode($news), true);
+
+        return json_encode($newsArr, JSON_UNESCAPED_UNICODE);
     }
 
-
-
-
-
-
-    /**
-     * Return an array of resource objects, themselves in array format
-     *
-     * @return mixed
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Return the properties of a resource object
-     *
-     * @return mixed
-     */
-    public function show($id = null)
-    {
-        //
-    }
-
-    /**
-     * Return a new resource object, with default properties
-     *
-     * @return mixed
-     */
-    public function new()
-    {
-        //
-    }
-
-    /**
-     * Create a new resource object, from "posted" parameters
-     *
-     * @return mixed
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Return the editable properties of a resource object
-     *
-     * @return mixed
-     */
-    public function edit($id = null)
-    {
-        //
-    }
-
-    /**
-     * Add or update a model resource, from "posted" properties
-     *
-     * @return mixed
-     */
-    public function update($id = null)
-    {
-        //
-    }
-
-    /**
-     * Delete the designated resource object from the model
-     *
-     * @return mixed
-     */
-    public function delete($id = null)
-    {
-        //
-    }
 }
+

@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 
-class NewsModel extends Model
+class CategoryModel extends Model
 {
-    protected $table = 'news';
+    protected $table = 'category';
     protected $primaryKey = 'id';
 }

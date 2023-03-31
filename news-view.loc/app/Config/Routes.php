@@ -27,6 +27,15 @@ $routes->set404Override();
  * --------------------------------------------------------------------
  */
 
+// New API Routes:
+// For test url http://news-view.loc/api/v1/language/en/news/count/2/category/Football
+$routes->get('api/v1/language/(:any)/news/count/(:num)/category/(:any)/', 'NewsApiController::getCount/$1/$2/$3');
+// For test url http://news-view.loc/api/v1/language/en/news/title/Bethem news today
+$routes->get('api/v1/language/(:any)/news/title/(:any)/', 'NewsApiController::getByTitle/$1/$2');
+
+
+
+
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');

@@ -15,7 +15,7 @@ class News extends Migration
                 'unsigned'          => true,
                 'auto_increment'    => true,
             ],
-            'categories_id' => [
+            'category_id' => [
                 'type'              => 'INT',
                 'constraint'        => '25',
                 'unsigned'          => true,
@@ -44,7 +44,7 @@ class News extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('categories_id', 'categories', 'id');
+        $this->forge->addForeignKey('category_id', 'category', 'id');
         $this->forge->createTable('news');
     }
 

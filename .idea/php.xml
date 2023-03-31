@@ -38,6 +38,32 @@
       <path value="$PROJECT_DIR$/news-api.loc/vendor/sebastian/complexity" />
       <path value="$PROJECT_DIR$/news-api.loc/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/news-api.loc/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/illuminate/pipeline" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/illuminate/macroable" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/illuminate/pagination" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/illuminate/events" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/illuminate/bus" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/illuminate/collections" />
+      <path value="$PROJECT_DIR$/news-api.loc/vendor/agungsugiarto/codeigniter4-eloquent" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
